@@ -1,0 +1,17 @@
+TITLE: The little Git-wiki
+#AUTHOR: Daniel Mejia R. Email: "danielmejia55@gmail.com":"mailto:danielmejia55@gmail.com"
+AUTHOR: Daniel Mejia R. Email: danielmejia55@gmail.com
+DATE: Feb 2015
+TOC: on    
+
+========= About this wiki =========
+This wiki is build upon the hundreds of public knowledge forum post, blogs and web pages among the web
+Some of them are not result of my own research but I forgot to cite properly. I'm sorry for that.  
+Most of the sources are from forums like "stackoverflow": "http://stackoverflow.com" and the "amazing
+book *Pro Git* available online": "http://www.git-scm.com/book".  
+A last resource can be found on "this amazing site":"http://lmgtfy.com/?q=git+how+to".  
+
+
+# Include chapter files using the option #include and the file name inside double quotes ".
+# #include "chapters/git-branches.do.txt"
+# #include "chapters/git-remotes.do.txt"

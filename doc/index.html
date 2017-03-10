@@ -1,0 +1,388 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="The little Git-wiki">
+
+<title>The little Git-wiki</title>
+
+
+<style type="text/css">
+/* blueish style */
+
+/* Color definitions:  http://www.december.com/html/spec/color0.html
+   CSS examples:       http://www.w3schools.com/css/css_examples.asp */
+
+body {
+  margin-top: 1.0em;
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, FreeSans, san-serif;
+  color: #000000;
+}
+h1 { font-size: 1.8em; color: #1e36ce; }
+h2 { font-size: 1.6em; color: #1e36ce; }
+h3 { font-size: 1.4em; color: #1e36ce; }
+a { color: #1e36ce; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 0,
+ 'sections': [('Table of contents',
+               0,
+               'table_of_contents',
+               'table_of_contents'),
+              ('About this wiki', 0, None, '___sec0'),
+              ('GIT BRANCHES', 0, None, '___sec1'),
+              ('List branches', 1, None, '___sec2'),
+              ('List remote and local branches', 2, None, '___sec3'),
+              ('List local branches', 2, None, '___sec4'),
+              ('Move between branches', 1, None, '___sec5'),
+              ('Create new branches', 1, None, '___sec6'),
+              ('Create new branch', 2, None, '___sec7'),
+              ('Create new local branch that tracks remote existing branch (the same name of remote branch)',
+               2,
+               None,
+               '___sec8'),
+              ('Delete branches', 1, None, '___sec9'),
+              ('Delete remote branch (not the local copy)',
+               2,
+               None,
+               '___sec10'),
+              ('Delete local branch (not the remote copy)',
+               2,
+               None,
+               '___sec11'),
+              ('Renaming branches', 1, None, '___sec12'),
+              ('Rename a local branch', 2, None, '___sec13'),
+              ('Rename a remote branch', 2, None, '___sec14'),
+              ('Working with branches', 1, None, '___sec15'),
+              ('Reset local branch to look like a remote brach',
+               2,
+               None,
+               '___sec16'),
+              ('GIT REMOTES', 0, None, '___sec17'),
+              ('List Remotes', 1, None, '___sec18'),
+              ('Add a remote', 1, None, '___sec19')]}
+end of tocinfo -->
+
+<body>
+
+    
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>The little Git-wiki</h1></center>  <!-- document title -->
+
+<!-- AUTHOR: Daniel Mejia R. Email: <a href="mailto:danielmejia55@gmail.com" target="_self">danielmejia55@gmail.com</a> -->
+
+<p>
+<!-- author(s): Daniel Mejia R. -->
+
+<center>
+<b>Daniel Mejia R.</b>  (<tt>danielmejia55 at gmail.com</tt>)
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Feb 2015</h4></center> <!-- date -->
+<br>
+
+<h1 id="table_of_contents">Table of contents</h2>
+
+<p>
+<a href="#___sec0"> About this wiki </a><br>
+<a href="#___sec1"> GIT BRANCHES </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec2"> List branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec3"> List remote and local branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec4"> List local branches </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec5"> Move between branches </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec6"> Create new branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec7"> Create new branch </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec8"> Create new local branch that tracks remote existing branch (the same name of remote branch) </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec9"> Delete branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec10"> Delete remote branch (not the local copy) </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec11"> Delete local branch (not the remote copy) </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec12"> Renaming branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec13"> Rename a local branch </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec14"> Rename a remote branch </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec15"> Working with branches </a><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#___sec16"> Reset local branch to look like a remote brach </a><br>
+<a href="#___sec17"> GIT REMOTES </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec18"> List Remotes </a><br>
+&nbsp; &nbsp; &nbsp; <a href="#___sec19"> Add a remote </a><br>
+</p>
+<p>
+
+<center><h1 id="___sec0">About this wiki </h1></center> <hr>
+This wiki is build upon the hundreds of public knowledge forum post, blogs and web pages among the web
+Some of them are not result of my own research but I forgot to cite properly. I'm sorry for that.  
+Most of the sources are from forums like <a href="http://stackoverflow.com" target="_self">stackoverflow</a> and the <a href="http://www.git-scm.com/book" target="_self">amazing
+book <em>Pro Git</em> available online</a>.  
+A last resource can be found on <a href="http://lmgtfy.com/?q=git+how+to" target="_self">this amazing site</a>.
+
+<p>
+<!-- Include chapter files using the option #include and the file name inside double quotes ". -->
+<!-- TITLE: The little Git-wiki -->
+<!-- CHAPTER: GIT BRANCHES -->
+<!-- DATE: Feb 2015 -->
+<!-- TOC: on -->
+
+<p>
+
+<center><h1 id="___sec1">GIT BRANCHES </h1></center> <hr>
+
+<h1 id="___sec2">List branches </h1>
+
+<h2 id="___sec3">List remote and local branches </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch -a
+</pre></div>
+
+<h2 id="___sec4">List local branches </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch -l
+</pre></div>
+
+<h1 id="___sec5">Move between branches </h1>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git checkout local_branch_name
+</pre></div>
+
+<h1 id="___sec6">Create new branches </h1>
+
+<h2 id="___sec7">Create new branch </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch branchname
+</pre></div>
+
+<h2 id="___sec8">Create new local branch that tracks remote existing branch (the same name of remote branch) </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git checkout --track origin/remote_branch_name
+</pre></div>
+
+<h1 id="___sec9">Delete branches </h1>
+
+<h2 id="___sec10">Delete remote branch (not the local copy) </h2>
+
+<p>
+As of Git v1.7.0, you can delete a remote branch using
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git push origin --delete &lt;branchName&gt;
+</pre></div>
+<p>
+Which is easier to remember than
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git push origin :&lt;branchName&gt;
+</pre></div>
+<p>
+which was added in Git v1.5.0 "to delete a remote branch or a tag."
+
+<h2 id="___sec11">Delete local branch (not the remote copy) </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git brach -d name_of_branch_to_delete
+</pre></div>
+<p>
+This will not affect the remote branch
+
+<h1 id="___sec12">Renaming branches </h1>
+
+<h2 id="___sec13">Rename a local branch </h2>
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch -m old_branch_name new_brach_name
+</pre></div>
+
+<h2 id="___sec14">Rename a remote branch </h2>
+
+<p>
+Before renaming a remote branch, we know we can simply rename a local branch by using following command:
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch -m old_branch_name new_brach_name
+</pre></div>
+<p>
+But, for a remote branch on Github, we need to follow these 3 steps:
+
+<ul>
+<li> Rename the branch in your local repository.</li>   
+<li> Remove the branch name you want to change on GitHub.</li>   
+<li> Push the new local branch name to GitHub.</li>   
+</ul>
+
+For example:
+
+<p>
+Rename the branch in your local repository.
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch -l   
+  master   
+ *branch01  
+$ git branch -m branch01 branch02   
+$ git branch  
+  master   / 
+ *branch02
+</pre></div>
+<p>
+Remove the branch name you want to change on GitHub.
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git push origin :branch01    
+To git@github.com:your_user_name/your_project.git    
+- [deleted]          branch01    
+</pre></div>
+<p>
+Push the new local branch name to GitHub.
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git push origin branch02    
+Counting objects: 56, done.    
+Delta compression using up to 4 threads.    
+Compressing objects: 100% (44/44), done.    
+Writing objects: 100% (44/44), 127.97 KiB, done.    
+Total 44 (delta 18), reused 1 (delta 0)    
+To git@github.com:your_user_name/your_project.git    
+ * [new branch]      branch02 -&amp;gt; branch02    
+Done.    
+</pre></div>
+
+<h1 id="___sec15">Working with branches </h1>
+
+<h2 id="___sec16">Reset local branch to look like a remote brach </h2>
+
+<p>
+Before reseting is worth to keep a copy of the branch you are reseting.
+Create a new branch from there by
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git branch local_branch_name
+</pre></div>
+<p>
+Then tell git to fetch all the branches and information on remote
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git fetch --all
+</pre></div>
+<p>
+Tell to the branch you are working (local_branch_name in this case) to track a remote branch
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git reset --hard origin/remote_branch_name
+</pre></div>
+<p>
+Finally pull the changes
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git pull
+</pre></div>
+<p>
+You end up with two local branches, the old one you discarded and the new you've just created
+which tracks the remote branch you choose.
+<!-- TITLE: The little Git-wiki -->
+<!-- CHAPTER: GIT REMOTES -->
+<!-- DATE: Feb 2015 -->
+<!-- TOC: on -->
+
+<p>
+
+<center><h1 id="___sec17">GIT REMOTES </h1></center> <hr>
+
+<h1 id="___sec18">List Remotes </h1>
+
+<p>
+To list the remotes associated with the repository
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git remote -v
+</pre></div>
+
+<h1 id="___sec19">Add a remote </h1>
+
+<p>
+You can have many "remotes" that store branches of the same repo (no matter if the name is the same)
+To add a remote:
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git remote add remote_name remote_url(with .git)
+</pre></div>
+<p>
+For example:
+
+<p>
+
+<!-- code=text typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>$ git remote add dev user@server.domain.do:~/MyRepo.git
+</pre></div>
+<p>
+Adds a remote called <code>dev</code> on the server <code>server.domain.do</code> in the repository <code>MyRepo</code>.
+
+<p>
+when you call <code>remote -v</code> you would get the list of actual remotes
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

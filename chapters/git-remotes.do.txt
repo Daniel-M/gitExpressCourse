@@ -1,0 +1,33 @@
+#TITLE: The little Git-wiki
+#CHAPTER: GIT REMOTES
+#DATE: Feb 2015
+#TOC: on    
+
+========= GIT REMOTES =========
+======= List Remotes =======
+
+To list the remotes associated with the repository
+
+!bc
+$ git remote -v
+!ec
+
+
+======= Add a remote =======
+
+You can have many "remotes" that store branches of the same repo (no matter if the name is the same)
+To add a remote:
+
+!bc
+$ git remote add remote_name remote_url(with .git)
+!ec
+
+For example:
+
+!bc
+$ git remote add dev user@server.domain.do:~/MyRepo.git
+!ec
+
+Adds a remote called `dev` on the server `server.domain.do` in the repository `MyRepo`.
+
+when you call `remote -v` you would get the list of actual remotes

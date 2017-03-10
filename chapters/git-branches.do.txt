@@ -1,0 +1,148 @@
+#TITLE: The little Git-wiki
+#CHAPTER: GIT BRANCHES
+#DATE: Feb 2015
+#TOC: on    
+
+========= GIT BRANCHES =========
+
+======= List branches =======
+
+===== List remote and local branches =====
+
+!bc
+$ git branch -a
+!ec
+
+===== List local branches =====
+
+!bc
+$ git branch -l
+!ec
+
+======= Move between branches =======
+
+!bc
+$ git checkout local_branch_name
+!ec
+
+======= Create new branches =======
+===== Create new branch =====
+
+!bc
+$ git branch branchname
+!ec
+
+===== Create new local branch that tracks remote existing branch (the same name of remote branch) =====
+
+!bc
+$ git checkout --track origin/remote_branch_name
+!ec
+
+======= Delete branches =======
+===== Delete remote branch (not the local copy) =====
+
+As of Git v1.7.0, you can delete a remote branch using   
+
+!bc
+$ git push origin --delete <branchName>
+!ec
+
+Which is easier to remember than   
+
+!bc
+$ git push origin :<branchName>
+!ec
+
+which was added in Git v1.5.0 "to delete a remote branch or a tag."   
+
+===== Delete local branch (not the remote copy) =====
+
+!bc
+$ git brach -d name_of_branch_to_delete
+!ec
+
+This will not affect the remote branch 
+
+======= Renaming branches ======= 
+===== Rename a local branch =====
+
+!bc
+$ git branch -m old_branch_name new_brach_name
+!ec 
+
+===== Rename a remote branch ===== 
+
+Before renaming a remote branch, we know we can simply rename a local branch by using following command:   
+
+!bc
+$ git branch -m old_branch_name new_brach_name
+!ec
+
+But, for a remote branch on Github, we need to follow these 3 steps:
+
+* Rename the branch in your local repository.   
+* Remove the branch name you want to change on GitHub.   
+* Push the new local branch name to GitHub.   
+
+For example:   
+
+Rename the branch in your local repository.
+!bc
+$ git branch -l   
+  master   
+ *branch01  
+$ git branch -m branch01 branch02   
+$ git branch  
+  master   / 
+ *branch02
+!ec
+
+Remove the branch name you want to change on GitHub.   
+!bc
+$ git push origin :branch01    
+To git@github.com:your_user_name/your_project.git    
+- [deleted]          branch01    
+!ec
+
+Push the new local branch name to GitHub.
+
+!bc
+$ git push origin branch02    
+Counting objects: 56, done.    
+Delta compression using up to 4 threads.    
+Compressing objects: 100% (44/44), done.    
+Writing objects: 100% (44/44), 127.97 KiB, done.    
+Total 44 (delta 18), reused 1 (delta 0)    
+To git@github.com:your_user_name/your_project.git    
+ * [new branch]      branch02 -&gt; branch02    
+Done.    
+!ec
+
+
+======= Working with branches =======
+===== Reset local branch to look like a remote brach =====
+
+Before reseting is worth to keep a copy of the branch you are reseting.
+Create a new branch from there by
+!bc
+$ git branch local_branch_name
+!ec
+
+Then tell git to fetch all the branches and information on remote
+!bc
+$ git fetch --all
+!ec
+
+
+Tell to the branch you are working (local_branch_name in this case) to track a remote branch
+!bc
+$ git reset --hard origin/remote_branch_name
+!ec
+
+Finally pull the changes
+!bc
+$ git pull
+!ec
+
+You end up with two local branches, the old one you discarded and the new you've just created
+which tracks the remote branch you choose.
